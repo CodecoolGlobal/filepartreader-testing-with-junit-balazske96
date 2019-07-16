@@ -24,4 +24,15 @@ public class FileWordAnalyzer {
                 .filter(x -> x.toLowerCase().contains(subString.toLowerCase()))
                 .collect(Collectors.toList());
     }
+
+    public List<String> getStringsWhichPalindromes () throws Exception {
+        return Stream.of(fileContent.readLines().split("\n"))
+                .filter(this::testForPalindrome).collect(Collectors.toList());
+    }
+
+    private boolean testForPalindrome(String line){
+        String newLine = line.replace(" ", "").toLowerCase();
+        String testString = new StringBuilder(newLine).reverse().toString().toLowerCase();
+        return newLine.equals(testString);
+    }
 }

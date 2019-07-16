@@ -14,7 +14,7 @@ public class FilePartReader {
     private Integer toLine = 0;
 
     public void setup(String filePath, Integer fromLine, Integer toLine) {
-        if (toLine < fromLine) throw new IllegalArgumentException("To line is smaller than from line");
+        if (toLine < fromLine || fromLine < 1) throw new IllegalArgumentException("To line is smaller than from line");
         this.filePath = filePath;
         this.fromLine = fromLine;
         this.toLine = toLine;

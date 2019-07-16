@@ -1,0 +1,4 @@
+indul a görög aludni
+ez nem egy palindrom
+géza kék az ég
+ez sem egy palindrom
